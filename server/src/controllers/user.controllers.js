@@ -347,7 +347,7 @@ const changeAvatarImage = AsyncHandler(async(req,res)=>{
     if(user.avatarImage){
       await deleteImageFromCloudinary(user.avatarImage);
     }
-    const cloudinaryAvatarResponse = await uploadOnCloudinary(`/tmp/${avatarImagePath}`);
+    const cloudinaryAvatarResponse = await uploadOnCloudinary(avatarImagePath);
     if(!cloudinaryAvatarResponse){
       throw new ApiError(500 , "Unable to upload avatar Image")
     }
@@ -386,7 +386,7 @@ const changeBackgroundImage = AsyncHandler(async(req,res)=>{
     if(user.backgroundImage){
       await deleteImageFromCloudinary(user.backgroundImage);
     }
-    const cloudinarybackgroundResponse = await uploadOnCloudinary(`/tmp/${backgroundImagePath}`);
+    const cloudinarybackgroundResponse = await uploadOnCloudinary(backgroundImagePath);
     if(!cloudinarybackgroundResponse){
       return res.json(new ApiResponse(500 , "Unable to upload background Image",{}))
     }
