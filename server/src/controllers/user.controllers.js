@@ -557,7 +557,9 @@ const following = AsyncHandler(async(req,res)=>{
   }
   return res.json(new ApiResponse(200,"following found",user.following))
 })
-
+const test = AsyncHandler(async(req,res)=>{
+  res.send("it's working ");
+})
 export {
    registerUser,
     userNameExists,//not implemented
@@ -577,5 +579,6 @@ export {
     //  fetchAllFollowing,
      checkFollow,
      following,
-     followers
+     followers,
+     test
     };

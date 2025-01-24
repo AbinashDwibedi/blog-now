@@ -14,6 +14,7 @@ import {
   refreshAccessToken,
   verifyUser,
   someUserData,
+  test,
   followUnfollow,
   // fetchAllFollowing,
   checkFollow,
@@ -55,7 +56,7 @@ router.route("/followers").get(verifyJWT,followers);
 // router.route("/fetchAllFollowing").get(verifyJWT,fetchAllFollowing)
 router.route("/checkFollow").get(verifyJWT,checkFollow);
 router.route("/following").get(verifyJWT,following);
-
+router.route("/test").get(test);
 router.route("/refreshAccessToken").get(refreshAccessToken);
 
 export default router;
