@@ -4,11 +4,16 @@ import cookieParser from "cookie-parser";
 import fs from "fs"
 
 const app = express();
-
+const allowedOrigins = ["http://localhost:5173", "https://blogging-now.web.app"];
 app.use(cors({
-    // origin: "http://localhost:5173",
-    origin:"https://blogging-now.web.app",
-    credentials:true
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
 }));
 app.use(cookieParser())
 app.use(express.json());
