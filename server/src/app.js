@@ -6,8 +6,8 @@ import fs from "fs"
 const app = express();
 
 app.use(cors({
-    // origin: "http://localhost:5173",
-    origin:"https://blogging-now.web.app",
+    origin: "http://localhost:5173",
+    // origin:"https://blogging-now.web.app"
     credentials:true
 }));
 app.use(cookieParser())
