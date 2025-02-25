@@ -1,0 +1,15 @@
+* {
+  scrollbar-width: none; /* For Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and other WebKit browsers */
+}
+* {
+  scrollbar-width: none; 
+}
+
+*::-webkit-scrollbar {
+  display: none; 
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
